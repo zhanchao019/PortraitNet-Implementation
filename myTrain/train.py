@@ -27,7 +27,7 @@ from data_aug import Normalize_Img, Anti_Normalize_Img
 from focal_loss import FocalLoss
 
 from logger import Logger
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
 def calcIOU(img, mask):
     sum1 = img + mask
@@ -779,7 +779,7 @@ if __name__ == '__main__':
     parser.add_argument('--model', default='PortraitNet', type=str, 
                         help='<model> should in [PortraitNet, ENet, BiSeNet]')
     parser.add_argument('--config_path', 
-                        default='/home/zhanchao/github/cv_assignment3/PortraitNet/config/model_mobilenetv2_without_auxiliary_losses.yaml', 
+                        default='/home/zhanchao/github/cv_assignment3/config/model_mobilenetv2_without_auxiliary_losses.yaml', 
                         type=str, help='the config path of the model')
     
     parser.add_argument('--workers', default=4, type=int, help='number of data loading workers')
