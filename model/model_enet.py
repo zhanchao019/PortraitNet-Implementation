@@ -354,7 +354,7 @@ class DownsamplingBottleneck(nn.Module):
         # Before concatenating, check if main is on the CPU or GPU and
         # convert padding accordingly
         if main.is_cuda:
-            padding = padding.cuda()
+            padding = padding
 
         # Concatenate
         main = torch.cat((main, padding), 1)

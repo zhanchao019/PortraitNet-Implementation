@@ -1,7 +1,6 @@
-data_root: /home/dongx12/Data/
-file_root: /home/dongx12/PortraitNet/data/select_data/
-model_root: /home/dongx12/PortraitNet/myexp/mobilenetv2_video_total/single_224_without_group/
-
+data_root: /data/zhanchao/ #需要进行训练的dataset root地址
+file_root: /home/zhanchao/github/cv_assignment3/data/select_data/
+model_root: /home/zhanchao/github/cv_assignment3/myexp/mobilenetv2_eg1800/single_224_single_gpu_2/
 istrain: True
 task: 'seg'
 datasetlist: ['supervisely_face_easy'] # 'support: [EG1800, supervisely_face_easy, ATR, MscocoBackground]'
