@@ -27,7 +27,7 @@ from data_aug import Normalize_Img, Anti_Normalize_Img
 from focal_loss import FocalLoss
 
 from logger import Logger
-os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 
 def calcIOU(img, mask):
     sum1 = img + mask
@@ -333,6 +333,7 @@ def test(dataLoader, netmodel, optimizer, epoch, logger, exp_args):
             
 
             for tag, images in info.items():
+                #pdb.set_trace()
                 logger.image_summary(tag, images, step=i)
             
     # return losses.avg

@@ -12,11 +12,14 @@ try:
 except ImportError:
     from io import BytesIO # Python 3.x
 from PIL import Image
+import cv2
 
 class Logger(object):
     def __init__(self, log_dir):
         """Create a summary writer logging to log_dir."""
         self.writer = tf.summary.create_file_writer(log_dir)
+        self.log_dir=log_dir
+        self.img_dir=log_dir+'/image'
 
     def scalar_summary(self, tag, value, step):
         """Log a scalar variable."""
@@ -27,9 +30,12 @@ class Logger(object):
 
     def image_summary(self, tag, images, step):
         """Log a list of images."""
-        
-        img_summaries = []
-        #pdb.set_trace()
+        if len(images)==2 :
+            cv2.imwrite(self.log_dir+'/'+str(step)+"_"+tag+'_1.png',images[0], [cv2.IMWRITE_PNG_COMPRESSION, 0])
+            cv2.imwrite(self.log_dir+'/'+str(step)+"_"+tag+'_2.png',images[1], [cv2.IMWRITE_PNG_COMPRESSION, 0])
+        else:
+            cv2.imwrite(self.log_dir+'/'+str(step)+"_"+tag+'.png',images[0], [cv2.IMWRITE_PNG_COMPRESSION, 0])
+        '''
         for i, img in enumerate(images):
             # Write the image to a string
             try:
@@ -42,6 +48,7 @@ class Logger(object):
 
         #log
         tf.summary.image(name='%s/%d' % (tag, i),data=images)
+        '''
 
 
     def histo_summary(self, tag, values, step, bins=1000):

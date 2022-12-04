@@ -1,10 +1,10 @@
 data_root: /data/zhanchao/ #需要进行训练的dataset root地址
 file_root: /home/zhanchao/github/cv_assignment3/data/select_data/
-model_root: /home/zhanchao/github/cv_assignment3/myexp/mobilenetv2_eg1800/single_224_single_gpu_3/
+model_root: /home/zhanchao/github/cv_assignment3/myexp/mobilenetv2_eg1800/single_224_single_gpu_4/
 
 istrain: True
 task: 'seg'
-datasetlist: ['EG1800'] # 'support: [EG1800, supervisely_face_easy, ATR, MscocoBackground]'
+datasetlist: ['supervisely_face_easy'] # 'support: [EG1800, supervisely_face_easy, ATR, MscocoBackground]'
 # datasetlist: ['supervisely_face_easy'] # 'support: [EG1800, supervisely_face_easy, ATR, MscocoBackground]'
 
 input_height: 224 # the height of input images
